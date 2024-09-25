@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeDesign Location</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .header h1 {
+            font-size: 2.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Find Us at WeDesign</h1>
+        <p>Bangalore, Koramangala</p>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([12.9279, 77.6271], 13); // Coordinates for Bangalore, Koramangala
+
+        // Set up the OSM layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker at the specified location
+        var marker = L.marker([12.9279, 77.6271]).addTo(map);
+
+        // Create a popup with a link to Google Maps
+        marker.bindPopup("<b>WeDesign</b><br>Bangalore, Koramangala<br><a href='https://www.google.com/maps/search/?api=1&query=12.9279,77.6271' target='_blank'>Open in Google Maps</a>");
+
+        // Optionally, open popup immediately
+        marker.openPopup();
+    </script>
+</body>
+</html>

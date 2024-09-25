@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .valid {
+            border-color: #10B981; /* Tailwind's green-500 */
+        }
+        .invalid {
+            border-color: #EF4444; /* Tailwind's red-500 */
+        }
+        .error-message {
+            color: #EF4444; /* Tailwind's red-500 */
+        }
+    </style>
+</head>
+<body class="bg-cover bg-center" style="background-image: url('/images/about.png');">
+
+    <div class="bg-black bg-opacity-70 flex items-center justify-center min-h-screen p-6">
+        <div class="bg-white bg-opacity-90 shadow-xl rounded-lg p-8 max-w-lg w-full">
+            <h2 class="text-4xl font-extrabold text-center" style="font-family: 'Playfair Display', serif; color: #4A90E2;">
+                Join Our Interior Design Community
+            </h2>
+
+            <p class="text-gray-700 text-center mb-6">
+                We believe that every space tells a story. By joining us, you're taking the first step towards transforming your vision into reality. 
+                Let's create beautiful spaces together!
+            </p>
+
+            <form action="/user" method="POST" id="registrationForm" class="space-y-6">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block text-lg font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name">
+                    <p class="error-message mt-1 text-sm"></p>
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email">
+                    <p class="error-message mt-1 text-sm"></p>
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                    <label for="password" class="block text-lg font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password">
+                    <p class="error-message mt-1 text-sm"></p>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div>
+                    <label for="confirmPassword" class="block text-lg font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm your password">
+                    <p class="error-message mt-1 text-sm"></p>
+                </div>
+
+                <!-- Date of Birth Field -->
+                <div>
+                    <label for="dob" class="block text-lg font-medium text-gray-700">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <p class="error-message mt-1 text-sm"></p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-gradient-to-l focus:outline-none shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+                    Register
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        // Function to validate the form on submit
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const isValid = validateForm(); // Validate form fields
+
+            if (isValid) {
+                alert('Registration Successful!');
+                this.submit(); // Manually submit the form to the server
+            }
+        });
+
+        // Function to validate all form fields
+        function validateForm() {
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const dob = document.getElementById('dob');
+
+            let isValid = true;
+
+            // Validate Name
+            if (!/^[A-Za-z\s]{3,}$/.test(name.value)) {
+                showError(name, 'Name must be at least 3 characters long and contain only letters and spaces.');
+                isValid = false;
+            } else {
+                showSuccess(name);
+            }
+
+            // Validate Email
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                showError(email, 'Please enter a valid email address.');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            // Validate Password
+            if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password.value)) {
+                showError(password, 'Password must be at least 8 characters long and contain both letters and numbers.');
+                isValid = false;
+            } else {
+                showSuccess(password);
+            }
+
+            // Validate Confirm Password
+            if (confirmPassword.value !== password.value) {
+                showError(confirmPassword, 'Passwords do not match.');
+                isValid = false;
+            } else {
+                showSuccess(confirmPassword);
+            }
+
+            // Validate Date of Birth
+            const today = new Date();
+            const birthDate = new Date(dob.value);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                showError(dob, 'You must be at least 18 years old.');
+                isValid = false;
+            } else {
+                showSuccess(dob);
+            }
+
+            return isValid; // Return the final validation status
+        }
+
+        // Show error state for an input field
+        function showError(input, message) {
+            const formControl = input.parentElement;
+            const errorMessage = formControl.querySelector('.error-message');
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+            errorMessage.textContent = message;
+        }
+
+        // Show success state for an input field
+        function showSuccess(input) {
+            const formControl = input.parentElement;
+            const errorMessage = formControl.querySelector('.error-message');
+            input.classList.add('valid');
+            input.classList.remove('invalid');
+            errorMessage.textContent = '';
+        }
+
+        // Clear all validation states
+        function clearValidationStates() {
+            document.querySelectorAll('input').forEach(input => {
+                input.classList.remove('valid', 'invalid');
+                const errorMessage = input.parentElement.querySelector('.error-message');
+                errorMessage.textContent = '';
+            });
+        }
+    </script>      
+</body>
+</html>

@@ -1,0 +1,606 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+}
+.fixed-height-section {
+    height: 100vh; /* Fixed height for each section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-image {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/bg4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px; /* Prevent hero image from overlapping with navbar */
+    border-radius: 20px; /* Softens the corners */
+}
+
+.hero-image .hero-text {
+    color: #fff;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-image .hero-text h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif; /* Added space between heading and paragraph */
+}
+
+
+
+.hero-btn {
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Overlay Text Box */
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.text-box h2 {
+    font-size: 5em;
+    font-family: "Dancing Script", sans-serif;
+    line-height: 1.2;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .hero-image .hero-text h1 {
+        font-size: 3em;
+    }
+
+    .hero-image .hero-text p {
+        font-size: 1.5em;
+    }
+
+    .text-box h2 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-image .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .text-box h2 {
+        font-size: 2em;
+    }
+}
+.hero-text {
+    position: relative;
+    font-family: 'Playfair', serif; /* Assuming you're using Playfair font */
+}
+
+.typing-animation {
+    overflow: hidden; /* Ensures the text stays within the container */
+    border-right: 0.15em solid; /* Creates a cursor effect */
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: typing 1.5s steps(40, end), hide-caret 0s 3.5s forwards;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; color: transparent; }
+    to { width: 100% }
+}
+
+/* Hides the cursor after typing */
+@keyframes hide-caret {
+    to { border-color: transparent; }
+}
+
+
+
+
+.navbar
+{
+    display: flex;
+    width: 100%;
+    align-items:center;
+    flex-wrap: wrap;
+    font-size: 23px;
+    padding: 5px 0;
+    
+}
+
+.logo {
+    width: 400px;
+    cursor: pointer;
+}
+
+nav {
+    margin-left: 20px; /* Move the entire nav to the right */
+}
+
+nav ul {
+    flex: 1;
+    text-align: right;
+    padding-right: 10%; /* Keep padding on the right */
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px; /* Adjust as needed */
+    padding-right: 0; /* Removed padding-right */
+    font-size: 25px;
+}
+
+nav ul li a {
+    color: #fff; /* Changed color to white */
+    text-decoration: none; /* Use 'none' instead of 'bold' */
+    font-size: 35px; 
+    font-family: "Josefin Sans", sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #47d4ff; 
+    transform: scale(1.1); 
+}
+
+
+.text-box {
+    color: #0f0e0e;
+    position: absolute;
+    text-align: left;
+    top: 60%; /* Adjusted from 50% to 60% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-decoration: none;
+    margin-top: 100px; /* Added margin-top to push the text down */
+}
+
+.text-box h2 {
+    font-size: 150px;
+    font-family: "Dancing Script", sans-serif;
+    line-height: 40px;
+    margin-left: 20px;
+    position: relative;
+    top: 50px; /* Ensure this doesn't push it too high */
+}
+
+/* You can add media queries for better responsiveness */
+@media (max-width: 768px) {
+    .text-box {
+        top: 70%; /* Adjust for smaller screens */
+        margin-top: 150px; /* Further adjustment */
+    }
+
+    .text-box h2 {
+        font-size: 50px; /* Smaller font size for smaller screens */
+        line-height: 60px;
+    }
+}
+html,body{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.font-custom {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-teko {
+    font-family: 'Teko', sans-serif;
+  }
+  
+/* Services Section Styles */
+#Services
+{
+    height: 700px;
+    width:100%;
+    background-color: #4f4a4a;
+    background-position: cover;
+    
+}
+/* Base Styles */
+#Services h4 {
+    margin-bottom: 20px;
+    color: #ece2e2; 
+    font-size: 50px; 
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgba(53, 52, 52, 1.5), transparent;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    height: 500px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1); /* Enlarge the card by 10% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow effect */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px transparent;
+    transform: scale(1.1); /* Optional: Enlarge image along with the card */
+    transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #333;
+    font-weight: bolder;
+    font-family: "teko", sans-serif;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #0e0000;
+    padding: 0 15px 15px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .card {
+        width: 250px;
+        height: 450px;
+    }
+    #Services h4 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        width: 220px;
+        height: 400px;
+    }
+    #Services h4 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 200px;
+        height: 350px;
+    }
+    #Services h4 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 180px;
+        height: 300px;
+    }
+    #Services h4 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 150px;
+        height: 250px;
+    }
+    #Services h4 {
+        font-size: 20px;
+    }
+}
+
+#Portfolio
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Teko", sans-serif;
+    background:#e7dada;
+    width:100%;
+    min-height:100vh;
+}
+.wrapper{
+    width:80%;
+    padding:30px 0;
+    text-align: center;
+    font-family: "Teko", sans-serif;
+}
+.section-header {
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    font-size: 55px;
+    color: black;
+    letter-spacing: 3px;
+    font-family: "Teko", sans-serif;
+    
+   
+}
+.content {
+    padding: 10%;
+    font-family: "Teko", sans-serif;
+    
+}
+.section-header h1{
+    font-family: "Teko", sans-serif;;
+}
+.content h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-family: "Teko", sans-serif;
+}
+.content p {
+    line-height: 1.5;
+    font-family: "Teko", sans-serif;
+    
+}
+/* Main content styles */
+.main-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+}
+.main-content .box {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+    height: 250px;
+    overflow: hidden;
+}
+.main-content .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.main-content .box:hover::before {
+    top: 0;
+    right: calc(100% - 5px);
+    z-index: 8;
+}
+.main-content .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-content .box .img-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    transition: all 0.5s ease-in-out;
+    font-family: "Teko", sans-serif;
+}
+.main-content .box:hover .img-text {
+    top: 0;
+    right: 0;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes up at least the full height of the viewport */
+}
+
+.reviews-section {
+    flex-grow: 1; /* Allow this section to grow and take remaining space */
+    padding: 2rem; /* Add padding as needed */
+    background-image: url('images/reviewbg.jpg');
+    background-size: cover; /* Ensure the background image covers the section */
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews-header h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-family: 'Playfair', serif;
+    color: white;
+}
+
+.reviews-header p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #f1f1f1;
+}
+
+.video-testimonials h3, .text-testimonials h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: 'Playfair', serif;
+    color: #ffbe00; /* Accent color */
+}
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.video-item {
+    flex: 1;
+    max-width: 560px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+}
+
+.text-testimonials {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial-item {
+    font-size: 18px;
+    font-style: italic;
+    color: #e0e0e0;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-item p {
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px; /* Increase padding for a better look */
+    color: white;
+    margin-top: 20px; /* Add gap above the footer */
+    width: 100%; /* Ensure the footer covers the full width */
+    background-color: #333; /* Dark background for footer */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Optional: shadow effect for depth */
+}
+
+.social-media-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Adjust spacing between icons */
+}
+
+.social-media-icons li {
+    display: inline-block;
+}
+
+.social-media-icons a {
+    text-decoration: none;
+    font-size: 24px; /* Adjust icon size */
+    color: #007bff; /* Primary color */
+}
+
+.footer-map {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin-top: 20px;
+    background-color: white; /* Space between icons and map */
+}
+
+.footer-map iframe, .footer-map img {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+
+.icon-style {
+    color: #007bff; /* Change to your desired color */
+    font-size: 24px; /* Change to your desired size */
+}
+
+.icon-style:hover {
+    color: #0056b3; /* Change to your desired hover color */
+}

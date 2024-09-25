@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>WE Design</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e; /* Background of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2b515d; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Round edges */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #005f99; /* Darker color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Bootstrap Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <a class="navbar-brand" href="#"><img src="images/logo-transparent-png.png" class="logo" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Reviews">Client Reviews</a>
+                    </li>
+                    <li class="nav-item">
+    <a class="nav-link" href="/map">Visit Us</a>
+</li>
+
+                </ul>
+            </div>
+        </nav>
+
+<div class="hero-image">
+    <div class="hero-text">
+        <h2 class="typing-animation">Designing Dreams,</h2>
+        <h2 class="typing-animation">Creating Realities</h2>
+        <a href="registration" class="hero-btn">Book a Quotation</a>
+    </div>
+</div>
+
+
+
+<!-- About Us Section -->
+<div id="About" class="flex flex-col lg:flex-row bg-[#f7f2ef] text-white py-16 px-8 lg:px-24" style="background-image: url("C:\Users\shobh\Desktop\mernbackend\public\images\about.png"); background-size: cover;">
+
+    <!-- Left Side: Main Image -->
+    <div class="lg:w-1/3 flex justify-center">
+        <img src="images/gal7.jpg" alt="Modern Interior Design" class="rounded-lg shadow-lg object-cover w-full h-auto lg:h-[28rem]">
+    </div>
+
+    <!-- Right Side: Text Content -->
+    <div class="lg:w-2/3 flex flex-col justify-center px-8 mt-8 lg:mt-0">
+        <div>
+            <h1 class="text-6xl font-bold mb-4 font-custom">Who are we?</h1>
+            <p class="text-lg font-medium mb-6">
+                Everything you need to elevate your space!
+            </p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Middle Image and Content -->
+            <div class="lg:w-1/2">
+                <img src="images/gal4.jpg" alt="Design Inspiration" class="rounded-lg shadow-lg object-cover w-full h-auto mb-4">
+            </div>
+
+            <!-- Black Box with Text -->
+            <div class="lg:w-1/2 bg-[#1a1a1a] text-white p-8 rounded-lg flex flex-col justify-center">
+                <h2 class="text-4xl font-extrabold mb-4 font-custom">WEDESIGN</h2>
+                <p class="text-1xl leading-relaxed mb-4 font-custom">
+                    At WeDesign, we specialize in creating exceptional interior spaces that elevate both form and function. Our expert team works closely with you to transform your vision into a stunning reality, whether it's a welcoming home or a dynamic business environment.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+    $('.testimonial-carousel').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: false,
+        fade: true,
+    });
+});
+</script>
+
+
+
+
+
+<section class="py-16 bg-beige">
+  <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif mb-8 text-white font-bold">Why Choose Us?</h2>
+      <div class="flex flex-wrap justify-center">
+          <!-- Feature 1 -->
+          <div class="flex flex-col items-center text-center m-4 w-64 feature">
+              <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center shadow-md mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white font-bold">Best Price Guarantee</h3>
+              <p class="text-gray-600">Get the best possible price on your dream home.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="flex flex-col items-center text-center m-4 w-64 feature">
+              <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center shadow-md mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white font-bold">45-Day Move-In Guarantee</h3>
+              <p class="text-gray-600">Enjoy a flexible move-in date for your convenience.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="flex flex-col items-center text-center m-4 w-64 feature">
+              <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center shadow-md mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.194-3.272l-7.22-12.046c-.803-.862-2.04-.862-2.846 0l-7.22 12.046c-1.308 1.605-1.17 3.272 1.194 3.272H8m6.938-8H21M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white font-bold">10-Year Warranty</h3>
+              <p class="text-gray-600">Rest assured with our comprehensive warranty coverage.</p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="flex flex-col items-center text-center m-4 w-64 feature">
+              <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center shadow-md mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white font-bold">146 Quality Checks</h3>
+              <p class="text-gray-600">Experience the highest standards of quality and craftsmanship.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+  
+  <style>
+    .feature {
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+  
+    .feature.animate {
+      transform: translateX(0);
+    }
+  
+    .feature:nth-child(1) {
+      transition-delay: 0s;
+    }
+  
+    .feature:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+  
+    .feature:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+  
+    .feature:nth-child(4) {
+      transition-delay: 0.6s;
+    }
+  </style>
+  
+  <script>
+    const features = document.querySelectorAll('.feature');
+  
+    window.addEventListener('scroll', () => {
+      const sectionTop = document.querySelector('section').offsetTop;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+  
+      if (scrollPosition > sectionTop) {
+        features.forEach((feature, index) => {
+          feature.classList.add('animate');
+        });
+      }
+    });
+  </script>
+
+<div id="Services">
+<h4>What we do</h4>
+<div class="card-container">
+    <div class="card">
+        <img src="images/space.jpg" alt="Space Planning">
+        <h2>Space Planning & Layout Design</h2>
+        <p>Optimize your space with expert planning and layout design tailored to your needs. Maximize functionality and aesthetics with our meticulous approach to spatial arrangement.</p>
+    </div>
+    <div class="card">
+        <img src="images/reno.jpeg" alt="Renovation">
+        <h2>Renovation and Remodelling</h2>
+        <p>Transform your space with our expert renovation services. From concept to completion, we specialize in enhancing your home or business with innovative design solutions and meticulous project management.</p>
+    </div>
+    <div class="card">
+        <img src="images/outdoor.jpg" alt="Outdoor Living">
+        <h2>Outdoor Living Spaces</h2>
+        <p>Extend your living area with our outdoor living space designs. From cozy patios to expansive gardens, we specialize in creating outdoor environments that blend seamlessly with your home's interior style, maximizing comfort and enjoyment year-round.</p>
+    </div>
+</div>
+</div>
+
+<div id="Portfolio">
+<div class="wrapper">
+    <h1 class="section-header">Portfolio</h1>
+    <div class="main-content">
+        <div class="box">
+            <img src="images/gal1.jpg" alt="Home-Design">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Home-Design</h2>
+                    <p>We blend functionality with elegance, focusing on clean lines, natural light, and thoughtful details. 
+                        From cozy, inviting rooms to stylish, practical solutions, we craft spaces that are both beautiful and livable.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/gal2.jpg" alt="Office">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Monochrome Office Spaces</h2>
+                    <p>Discover the sophistication of Monochrome Office Spaces, where streamlined design meets elegance. 
+                        Our project focuses on creating visually cohesive environments through the use of a single color palette, 
+                        enhancing focus and reducing visual clutter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/gal6.jpg" alt="space_planning">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Space Planning</h2>
+                    <p>We specialize in optimizing layouts to enhance functionality and flow, ensuring every inch of your space is used efficiently. Whether for offices, homes, or commercial settings, 
+                        our tailored solutions balance aesthetics with practicality, creating harmonious and productive environments that meet your unique needs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/gal8.jpg" alt="Stairway">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Aesthetic Stairways</h2>
+                    <p>We specialize in crafting stunning stairways that serve as both functional elements and visual focal points.
+                        Our designs blend beauty with practicality, featuring innovative materials and artistic details to enhance any interior.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/gal3.jpg" alt="Project 1">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Modern Green</h2>
+                    <p>Infuse modern spaces with a touch of nature through our Green Space Touch services. Whether for offices or homes,
+                        we integrate lush, vibrant greenery to enhance aesthetic appeal and promote well-being.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/gal7.jpg" alt="Outdoor">
+            <div class="img-text">
+                <div class="content">
+                    <h2>Outdoor Designing</h2>
+                    <p>Revitalize your outdoor spaces with our expert outdoor designing services. 
+                        We craft dynamic and inviting exteriors that blend functionality with beauty, creating serene retreats or vibrant entertainment areas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="Reviews" class="reviews-section" style="background-image: url('images/reviewbg.jpg');">
+    <div class="container">
+        <div class="reviews-header">
+            <h2>What Our Clients Say</h2>
+            <p>Discover the experiences of our satisfied clients.</p>
+        </div>
+
+        <!-- Video Testimonials Section -->
+        <div class="video-testimonials">
+            <h3>Client Testimonial Videos</h3>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video controls>
+                        <source src="\images\videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="\images\review2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Testimonials Section -->
+      <div class="text-testimonials py-12 bg-gradient-to-r from-white via-gray-100 to-white">
+    <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-8">Client Testimonials</h3>
+        <div class="testimonial-carousel grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="testimonial-item bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                <p class="text-lg text-gray-600 italic mb-4">"The team was amazing! They transformed our living room into a cozy and stylish space that we absolutely love."</p>
+                <p class="font-semibold text-gray-800">- Alia Sharma</p>
+            </div>
+            <div class="testimonial-item bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                <p class="text-lg text-gray-600 italic mb-4">"Professional and creative! The design exceeded our expectations."</p>
+                <p class="font-semibold text-gray-800">- Judith Roy</p>
+            </div>
+            <div class="testimonial-item bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                <p class="text-lg text-gray-600 italic mb-4">"Their attention to detail is unmatched. We couldn't be happier with our new office design."</p>
+                <p class="font-semibold text-gray-800">- Andrew Mathew </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto text-center">
+      <!-- Big Bold WEDESIGN -->
+      <h1 class="text-4xl font-bold mb-4 tracking-wider">WEDESIGN</h1>
+      
+      <!-- Social Icons -->
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <i class="fab fa-facebook-f text-2xl"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <i class="fab fa-linkedin-in text-2xl"></i>
+        </a>
+      </div>
+      
+      <!-- Footer Text -->
+      <p class="text-gray-400 text-sm">
+        © 2024 WEDESIGN. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+
+</body>
+
+</html>
+
